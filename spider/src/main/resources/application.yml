@@ -1,0 +1,51 @@
+server:
+  port: 9999
+
+--- #---------------------数据库配置---------------------------
+spring:
+  main:  #不显示启动信息
+    banner-mode: off
+    info:
+      enabled: false
+  datasource:
+    url: jdbc:mysql://192.168.121.121:3306/comicstar?useUnicode=true&characterEncoding=utf-8&useSSL=false&serverTimezone=Asia/Shanghai
+    username: root
+    password: root
+    #--------------------------- MQ配置-------------------------
+  rabbitmq:
+    host: 192.168.121.121 # 主机名
+    port: 5672 # 端口
+    virtual-host: / # 虚拟主机
+    username: root # 用户名
+    password: root # 密码
+    publisher-confirm-type: correlated # 设置消息发布手动确认
+  # ----------------------Elasticsearch 配置--------------------------
+  elasticsearch:
+    # 是否开启 Elasticsearch 搜索引擎功能：true-开启 false-不开启
+    enabled: true
+    uris:
+      - https://192.168.121.121:9200
+    username: elastic
+    password: 7z*to5bN_*YCQ8KKJgqKm
+    ssl:
+      # 设置 ssl 的认证模式，如果该配置项为 none ，说明不需要认证，信任所有的 ssl 证书。
+      verification-mode: none
+
+# --------------------------mybatis-plus配置---------------------------
+mybatis-plus:
+  mapper-locations: classpath:mapper/**/*.xml
+  global-config:
+    banner: off # 关闭mybatisplus启动图标
+#  configuration:   #打印sql日志
+#    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+
+
+# --------------------------日志配置---------------------------
+logging:
+  level:
+    root: ERROR
+
+
+
+
+

@@ -1,0 +1,78 @@
+
+
+
+PUT /manga
+{
+  "mappings" : {
+    "properties" : {
+      "comicId" : {
+        "type" : "long",
+        "index": false
+      },
+      "categoryId" : {
+        "type" : "long",
+        "index": false
+      },
+      "categoryName" : {
+        "type" : "text",
+        "analyzer": "ik_max_word",
+        "copy_to": "all"
+      },
+      "comicName" : {
+        "type" : "keyword",
+        "copy_to": "all"
+      },
+      "authorName" : {
+        "type" : "keyword",
+        "copy_to": "all"
+      },
+      "picUrl" : {
+        "type" : "keyword",
+        "index": false
+      },
+      "tags" : {
+        "type" : "text",
+        "analyzer": "ik_max_word",
+        "copy_to": "all"
+      },
+      "comicDesc" : {
+        "type" : "text",
+        "analyzer": "ik_max_word",
+        "copy_to": "all"
+      },
+      "chapterCount" : {
+        "type" : "integer",
+        "index": false
+      },
+      "lastChapterNum" : {
+        "type" : "integer",
+        "index": false
+      },
+      "lastChapterName" : {
+        "type": "text",
+        "analyzer": "ik_max_word",
+        "copy_to": "all"
+      },
+      "origin" : {
+        "type" : "keyword",
+        "index" : false
+      },
+      "all":{
+        "type": "text",
+        "analyzer": "ik_max_word"
+      }
+    }
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
