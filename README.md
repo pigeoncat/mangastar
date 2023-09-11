@@ -186,7 +186,7 @@ ComicmqApplication --------------- 服务启动类
 
 准备好 mysql 环境，ES 环境，Rabbitmq 环境
 
-一个四个模块，comic-star、spider、comicmq、comicstar-front-web
+一共四个模块，comic-star、spider、comicmq、comicstar-front-web
 
 各模块之间都是解耦的，启动顺序无所谓
 
